@@ -1,19 +1,20 @@
 Stock Market App - README
 Welcome to the Stock Market App built with Flutter! This app is designed to provide real-time stock updates and supports a voice calling feature for communication between users. This README will guide you through setting up, testing, and using the app, including details about the app's API integrations and usage instructions.
 
-## Table of Contents
-App Setup
-Running the App
-Voice Calling Feature
-Payment Testing
-Stock APIs
-Known Issues
-Future Improvements
+# Table of Contents
+1. App Setup
+2. Running the App
+3. Voice Calling Feature
+4. Payment Testing
+5. Stock APIs
+6. Known Issues
+7. Future Improvements
 
 # App Setup
 
 ## 1. Clone the Repository
 Start by cloning the repository to your local machine:
+
 ```
 git clone https://github.com/your-repo/stock-market-app.git
 cd stock-market-app
@@ -27,6 +28,7 @@ flutter pub get
 ```
 
 # Running the App
+
 ## 1. Flavors Setup
 The app has three flavors configured: QA, Dev, and Prod. You can run the app in any of these flavors by specifying the flavor name.
 
@@ -45,8 +47,9 @@ To test the voice calling functionality, follow the steps below:
 
 ## Login as Two Different Users:
 
-User 1 (Bob): Login with the username "Bob".
-User 2 (Alice): Login with the username "Alice".
+1. User 1 (Bob): Login with the username "Bob".
+2. User 2 (Alice): Login with the username "Alice".
+
 
 ## Initiate the Call:
 
@@ -63,33 +66,39 @@ Use any payment method to make a payment for the audio call.
 
 ## Test Payment Process:
 
-During the payment process, do not complete the payment.
-Instead, close the payment app or terminate the payment process.
-This action will redirect you back to the app, and after a brief waiting period, you will see the payment success notification (as this uses test credentials).
+1. During the payment process, do not complete the payment.
+2. Instead, close the payment app or terminate the payment process.
+3. This action will redirect you back to the app, and after a brief waiting period, you will see the payment success notification (as this uses test credentials).
 
 ## Payment Confirmation:
 
-After successful payment, you will be redirected to the audio call screen.
-Wait for the other user (Alice/Bob) to complete the payment process.
-Once both users are redirected to the same screen, the voice call will be initiated.
+1. After successful payment, you will be redirected to the audio call screen.
+2. Wait for the other user (Alice/Bob) to complete the payment process.
+3. Once both users are redirected to the same screen, the voice call will be initiated.
+
 
 # Voice Calling:
+
 Once both users (Bob and Alice) land on the same audio call screen, the call will be established, and both users can communicate in real-time via voice.
 
+
 # Stock APIs
+
 The app uses two external stock APIs to retrieve stock data:
 
-## AlphaVantage API (for time-series data)
+## 1. AlphaVantage API (for time-series data)
 
-This API provides historical data that is used to plot graphs for stocks.
-API rate limits may cause delays in fetching data (since the free tier has a limited number of requests per day - only 25). Please be patient if the API does not load immediately, also if you face the issue, please try reopening the app.
+1. This API provides historical data that is used to plot graphs for stocks.
+2. API rate limits may cause delays in fetching data (since the free tier has a limited number of requests per day - only 25). Please be patient if the API does not load immediately, also if you face the issue, please try reopening the app.
 
-## Finnhub API (for real-time stock price updates)
+## 2. Finnhub API (for real-time stock price updates)
 
-Used to update stock prices in real-time by querying the /quote endpoint.
-Provides current stock prices and is used to keep the app up to date with the latest market information.
+1. Used to update stock prices in real-time by querying the /quote endpoint.
+2. Provides current stock prices and is used to keep the app up to date with the latest market information.
+
 
 # Upstox API
+
 Upstox account verification is in progress during the app development, which takes approximately 4 days. Therefore, the Upstox API and WebSocket functionality cannot be used at the moment.
 
 Once the Upstox account is verified, we will shift to using Upstox WebSocket for real-time stock data updates.
@@ -107,6 +116,7 @@ Please try to complete the project validation before 7:00 PM on December 30, 202
 
 ## API Delays:
 As the app uses external APIs (AlphaVantage and Finnhub), there might be slight delays in fetching the stock data.
+
 
 # Future Improvements
 
