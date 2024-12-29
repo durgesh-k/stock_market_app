@@ -13,19 +13,19 @@ class Env {
     if (appFlavor != null) {
       switch (appFlavor) {
         case "qa":
-          token = dotenv.env['RAPID_API_KEY_QA'] ?? '';
+          token = dotenv.env['FINNHUB_API_KEY_QA'] ?? '';
           razorpayKey = dotenv.env['RAZORPAY_KEY_QA'] ?? '';
           break;
         case "dev":
-          token = dotenv.env['RAPID_API_KEY_DEV'] ?? '';
+          token = dotenv.env['FINNHUB_API_KEY_DEV'] ?? '';
           razorpayKey = dotenv.env['RAZORPAY_KEY_DEV'] ?? '';
           break;
         case "prod":
-          token = dotenv.env['RAPID_API_KEY_PROD'] ?? '';
+          token = dotenv.env['FINNHUB_API_KEY_PROD'] ?? '';
           razorpayKey = dotenv.env['RAZORPAY_KEY_PROD'] ?? '';
           break;
         default:
-          token = dotenv.env['RAPID_API_KEY_DEV'] ?? '';
+          token = dotenv.env['FINNHUB_API_KEY_DEV'] ?? '';
           razorpayKey = dotenv.env['RAZORPAY_KEY_DEV'] ?? '';
       }
     }

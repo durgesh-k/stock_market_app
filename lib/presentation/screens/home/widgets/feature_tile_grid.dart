@@ -16,38 +16,41 @@ class FeatureTileGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          width: 80,
-          height: 80,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: ColorName.text,
-            border: Border.all(color: Colors.blue, width: 2),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(1000),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: icon,
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 80,
+            height: 80,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: ColorName.text,
+              border: Border.all(color: Colors.blue, width: 2),
             ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(1000),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: icon,
+              ),
+            ),
+            /*  child: Icon(
+                  item['icon'],
+                  size: 40,
+                  color: Colors.blue,
+                ), */
           ),
-          /*  child: Icon(
-                item['icon'],
-                size: 40,
-                color: Colors.blue,
-              ), */
-        ),
-        Utils.addVerticalSpace(8),
-        Text(
-          title,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyles.boldMediumLight(),
-          textAlign: TextAlign.center,
-        ),
-      ],
+          Utils.addVerticalSpace(8),
+          Text(
+            title,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyles.boldMediumLight(),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }

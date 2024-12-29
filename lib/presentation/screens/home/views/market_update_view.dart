@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:stock_market_app/core/services/router/app_routes.dart';
 import 'package:stock_market_app/gen/assets.gen.dart';
 import 'package:stock_market_app/presentation/screens/home/widgets/feature_tile_grid.dart';
 
@@ -28,7 +30,12 @@ class MarketUpdateView extends StatelessWidget {
       itemBuilder: (context, index) {
         final item = items[index];
         return FeatureTileGrid(
-            title: item['title'], icon: item['icon'], onTap: () {});
+            title: item['title'],
+            icon: item['icon'],
+            onTap: () {
+              context.pushNamed(AppRoutes.info.name,
+                  extra: "This feature is coming soon..");
+            });
       },
     );
   }

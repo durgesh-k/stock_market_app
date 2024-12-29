@@ -65,8 +65,6 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
         completer.complete();
       });
 
-      //_razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, (_) {});
-
       _razorpay.open(options);
     } catch (e) {
       emit(PaymentFailure(e.toString()));

@@ -7,7 +7,16 @@ final class HomeInitial extends HomeState {}
 
 final class HomeGetData extends HomeState {
   final bool isSuccess;
-  final StockData data;
+  final List<double> data;
 
   HomeGetData({required this.isSuccess, required this.data});
+}
+
+final class StockUpdated extends HomeState {
+  final StockPriceModel? model;
+  final String stockName;
+  final bool isSuccess;
+
+  StockUpdated(
+      {required this.model, required this.stockName, required this.isSuccess});
 }

@@ -34,7 +34,7 @@ class StockPriceTile extends StatelessWidget {
                   ),
                   Utils.addVerticalSpace(4),
                   Text(
-                    data.value,
+                    data.value ?? "-",
                     style: TextStyles.boldMediumLight().copyWith(
                         color: data.isGrowing ? Colors.green : Colors.red),
                   )

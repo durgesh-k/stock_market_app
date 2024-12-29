@@ -9,6 +9,8 @@
 .history
 .svn/
 migrate_working_dir/
+.env
+*.env
 
 # IntelliJ related
 *.iml
@@ -30,7 +32,8 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-
+/.env
+.env
 # Symbolication related
 app.*.symbols
 
@@ -41,3 +44,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+*.env

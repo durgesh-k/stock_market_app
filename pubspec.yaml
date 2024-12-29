@@ -42,6 +42,7 @@ dependencies:
   flutter_svg: ^2.0.7
   fluttertoast:
   google_fonts:
+  syncfusion_flutter_charts: ^21.1.41
 
   #Utils
   dio: ^5.4.0

@@ -4,3 +4,5 @@ part of 'home_bloc.dart';
 sealed class HomeEvent {}
 
 class HomeDataInitEvent extends HomeEvent {}
+
+class HomeRefreshDataEvent extends HomeEvent {}

@@ -4,7 +4,6 @@ import 'package:stock_market_app/core/services/router/app_routes.dart';
 import 'package:stock_market_app/core/utils/secure_storage.dart';
 import 'package:stock_market_app/core/utils/utils.dart';
 import 'package:stock_market_app/data/constants.dart';
-import 'package:stock_market_app/gen/colors.gen.dart';
 import 'package:stock_market_app/presentation/style/text_styles.dart';
 import 'package:stock_market_app/presentation/widgets/buttons/button_large.dart';
 import 'package:stock_market_app/presentation/widgets/snackbar.dart';

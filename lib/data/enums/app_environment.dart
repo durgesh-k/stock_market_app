@@ -1,1 +1,1 @@
-enum AppEnvironment { test, dev, prod }
+enum AppEnvironment { qa, dev, prod }

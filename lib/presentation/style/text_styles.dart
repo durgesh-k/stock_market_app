@@ -9,6 +9,9 @@ abstract class TextStyles {
   static TextStyle boldMediumLight() => const TextStyle(
       fontSize: 16, fontWeight: FontWeight.w600, color: ColorName.text);
 
+  static TextStyle regularMediumLight() => const TextStyle(
+      fontSize: 16, fontWeight: FontWeight.w400, color: ColorName.text);
+
   static TextStyle boldSmallLight() => const TextStyle(
       fontSize: 12, fontWeight: FontWeight.w600, color: ColorName.text);
 
