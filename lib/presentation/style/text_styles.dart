@@ -14,4 +14,9 @@ abstract class TextStyles {
 
   static TextStyle heading() => const TextStyle(
       fontSize: 20, fontWeight: FontWeight.w600, color: ColorName.text);
+
+  static TextStyle headingLargeLight() =>
+      const TextStyle(color: ColorName.text, fontSize: 28);
+
+  static TextStyle regularLight() => const TextStyle(color: ColorName.text);
 }

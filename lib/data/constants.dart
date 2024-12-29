@@ -2,9 +2,11 @@ abstract class Constants {
   static const String apiBase =
       "https://indian-stock-exchange-api2.p.rapidapi.com/";
   static const String wssBase = "wss://api.upstox.com/v2";
+  static const String agoraChannelId = "audioCall";
 }
 
 abstract class ValueKeys {
   static const String tokenKey = "token";
   static const String razorpayKey = "razorpayKey";
+  static const String user = "user";
 }

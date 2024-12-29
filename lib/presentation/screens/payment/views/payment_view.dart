@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:stock_market_app/core/services/router/app_routes.dart';
+import 'package:stock_market_app/core/utils/secure_storage.dart';
 import 'package:stock_market_app/core/utils/utils.dart';
+import 'package:stock_market_app/data/constants.dart';
 import 'package:stock_market_app/presentation/screens/payment/bloc/payment_bloc.dart';
 import 'package:stock_market_app/presentation/style/text_styles.dart';
 import 'package:stock_market_app/presentation/widgets/buttons/button_small.dart';
@@ -50,9 +52,20 @@ class PaymentView extends StatelessWidget {
     );
   }
 
-  _manageStates(BuildContext context, PaymentState state) {
+  _manageStates(BuildContext context, PaymentState state) async {
     if (state is PaymentSuccess) {
-      context.pushReplacementNamed(AppRoutes.voiceCall.name);
+      showSuccessSnackbar(
+          context: context,
+          message: "Payment Success! Redirecting you to Audio call");
+      String loggedInUser = await SecureStorage.getStringFromSF(ValueKeys.user);
+      String remoteUsername = "";
+      if (loggedInUser.isNotEmpty && loggedInUser == "Bob") {
+        remoteUsername = "Alice";
+      } else {
+        remoteUsername = "Bob";
+      }
+      context.pushReplacementNamed(AppRoutes.voiceCall.name,
+          extra: remoteUsername);
     } else if (state is PaymentFailure) {
       showErrorSnackbar(
           context: context, message: 'Payment Failed: ${state.error}');

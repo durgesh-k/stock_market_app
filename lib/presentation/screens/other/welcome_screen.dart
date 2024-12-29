@@ -1,29 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:stock_market_app/core/services/router/app_routes.dart';
+import 'package:stock_market_app/core/utils/secure_storage.dart';
 import 'package:stock_market_app/core/utils/utils.dart';
+import 'package:stock_market_app/data/constants.dart';
 import 'package:stock_market_app/gen/colors.gen.dart';
+import 'package:stock_market_app/presentation/style/text_styles.dart';
 import 'package:stock_market_app/presentation/widgets/buttons/button_large.dart';
+import 'package:stock_market_app/presentation/widgets/snackbar.dart';
 
-class WelcomeScreen extends StatefulWidget {
+class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
-
-  @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
-}
-
-class _WelcomeScreenState extends State<WelcomeScreen> {
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      /* await Future.delayed(const Duration(
-          seconds:
-              2)); // Delay added, can be replaced by any get initial data function */
-      // ignore: use_build_context_synchronously
-      //context.pushReplacementNamed(AppRoutes.home.name);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,26 +25,26 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
+                Text(
                   "Welcome to the \nStock Market App",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: ColorName.text, fontSize: 28),
+                  style: TextStyles.headingLargeLight(),
                 ),
                 Utils.addVerticalSpace(10),
-                const Text(
-                  " By Acme Company Ltd",
-                  style: TextStyle(color: ColorName.text),
+                Text(
+                  "By Acme Company Ltd",
+                  style: TextStyles.regularLight(),
                 ),
                 Utils.addVerticalSpace(50),
                 ButtonLarge(
                     onPressed: () {
-                      context.pushReplacementNamed(AppRoutes.home.name);
+                      redirectToHome(context, "Bob");
                     },
                     text: "Continue as Bob"),
                 Utils.addVerticalSpace(10),
                 ButtonLarge(
                     onPressed: () {
-                      context.pushReplacementNamed(AppRoutes.home.name);
+                      redirectToHome(context, "Alice");
                     },
                     text: "Continue as Alice"),
               ],
@@ -66,5 +53,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         ),
       ),
     );
+  }
+
+  redirectToHome(BuildContext context, String userName) {
+    SecureStorage.addStringToSF(ValueKeys.user, userName);
+    context.pushReplacementNamed(AppRoutes.home.name);
+    showInfoSnackBar(context: context, message: "Logged in as $userName");
   }
 }

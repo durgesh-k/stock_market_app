@@ -28,7 +28,10 @@ abstract class AppRouter {
         GoRoute(
             path: AppRoutes.voiceCall.path,
             name: AppRoutes.voiceCall.name,
-            builder: (context, state) => const VoiceCallScreen()),
+            builder: (context, state) {
+              String remoteUsername = state.extra as String;
+              return VoiceCallScreen(remoteUsername: remoteUsername);
+            }),
         GoRoute(
             path: AppRoutes.info.path,
             name: AppRoutes.info.name,

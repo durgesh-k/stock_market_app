@@ -62,7 +62,6 @@ dependencies:
 
   #Agora
   agora_rtc_engine: ^6.3.2
-  agora_chat_sdk: ^1.2.0
 
 dev_dependencies:
   flutter_test:
