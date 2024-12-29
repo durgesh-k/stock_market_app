@@ -14,7 +14,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
 
   var options = {
     //'key': 'rzp_live_ILgsfZCZoFIKMb',
-    'amount': 100,
+    'amount': 10000,
     'name': 'Acme Company Ltd',
     'description': 'Audio Call',
     'retry': {'enabled': true, 'max_count': 1},

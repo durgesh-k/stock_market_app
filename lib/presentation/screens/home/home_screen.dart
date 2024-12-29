@@ -110,11 +110,17 @@ class _HomeScreenState extends State<HomeScreen> {
               : '-';
 
           return Expanded(
-            child: StockPriceTile(
-              data: TileData(
-                title: stockSymbol,
-                value: formattedPrice,
-                isGrowing: isGrowing,
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: index > 0 ? 5.0 : 0.0,
+                right: index < Constants.otherStocks.length - 1 ? 5.0 : 0.0,
+              ),
+              child: StockPriceTile(
+                data: TileData(
+                  title: stockSymbol,
+                  value: formattedPrice,
+                  isGrowing: isGrowing,
+                ),
               ),
             ),
           );
