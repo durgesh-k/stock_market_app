@@ -5,6 +5,7 @@ import 'package:stock_market_app/data/constants.dart';
 
 class Env {
   String token = "";
+  String razorpayKey = "";
 
   getApp() async {
     await dotenv.load(fileName: ".env");
@@ -12,18 +13,23 @@ class Env {
       switch (appFlavor) {
         case "qa":
           token = dotenv.env['RAPID_API_KEY_QA'] ?? '';
+          razorpayKey = dotenv.env['RAZORPAY_KEY_QA'] ?? '';
           break;
         case "dev":
           token = dotenv.env['RAPID_API_KEY_DEV'] ?? '';
+          razorpayKey = dotenv.env['RAZORPAY_KEY_DEV'] ?? '';
           break;
         case "prod":
           token = dotenv.env['RAPID_API_KEY_PROD'] ?? '';
+          razorpayKey = dotenv.env['RAZORPAY_KEY_PROD'] ?? '';
           break;
         default:
           token = dotenv.env['RAPID_API_KEY_DEV'] ?? '';
+          razorpayKey = dotenv.env['RAZORPAY_KEY_DEV'] ?? '';
       }
     }
     SecureStorage.addStringToSF(ValueKeys.tokenKey, token);
+    SecureStorage.addStringToSF(ValueKeys.razorpayKey, razorpayKey);
   }
 }
 

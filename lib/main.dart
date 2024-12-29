@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stock_market_app/core/services/router/app_router.dart';
 import 'package:stock_market_app/core/utils/env_util.dart';
 import 'package:stock_market_app/core/utils/utils.dart';
+import 'package:stock_market_app/presentation/style/app_theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +20,7 @@ class MyStockMarketApp extends StatelessWidget {
       child: MaterialApp.router(
           title: 'Stock Market App',
           debugShowCheckedModeBanner: false,
+          theme: appTheme(),
           scaffoldMessengerKey: Utils.navigatorKey,
           routerConfig: AppRouter.goRouter),
     );

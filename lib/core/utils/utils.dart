@@ -15,4 +15,12 @@ abstract class Utils {
   static initializeSizeConfig(BuildContext context) {
     SizeConfig.initialize(context);
   }
+
+  static addHorizontalSpace(double val) {
+    return SizedBox(width: val);
+  }
+
+  static addVerticalSpace(double val) {
+    return SizedBox(height: val);
+  }
 }

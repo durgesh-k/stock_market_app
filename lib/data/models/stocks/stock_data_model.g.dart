@@ -13,15 +13,9 @@ StockData _$StockDataFromJson(Map<String, dynamic> json) => StockData(
           json['companyProfile'] as Map<String, dynamic>),
       currentPrice:
           CurrentPrice.fromJson(json['currentPrice'] as Map<String, dynamic>),
-      percentChange: double.parse(json['percentChange']),
-      yearHigh: (json['yearHigh'] == null ||
-              (json['yearHigh'] is String && json['yearHigh'].trim().isEmpty))
-          ? null
-          : double.parse(json['yearHigh']),
-      yearLow: (json['yearLow'] == null ||
-              (json['yearLow'] is String && json['yearLow'].trim().isEmpty))
-          ? null
-          : double.parse(json['yearLow']),
+      percentChange: (json['percentChange'] as num).toDouble(),
+      yearHigh: (json['yearHigh'] as num?)?.toDouble(),
+      yearLow: (json['yearLow'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$StockDataToJson(StockData instance) => <String, dynamic>{

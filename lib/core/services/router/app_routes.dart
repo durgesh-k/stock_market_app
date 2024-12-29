@@ -14,4 +14,10 @@ abstract class AppRoutes {
 
   /// Voice
   static final voiceCall = AppRoute(path: "/voice-call", name: "voice-call");
+
+  ///Payment
+  static final payment = AppRoute(path: "/payment", name: "payment");
+
+  ///Info
+  static final info = AppRoute(path: "/info", name: "info");
 }

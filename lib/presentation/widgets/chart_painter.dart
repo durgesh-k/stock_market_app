@@ -22,7 +22,6 @@ class CurvedChartPainter extends CustomPainter {
     this.gradientStops = const [0.0, 1.0],
     this.labelTextStyle = const TextStyle(color: Colors.grey, fontSize: 12),
   });
-
   @override
   void paint(Canvas canvas, Size size) {
     // Set up the paint for the chart line
@@ -34,19 +33,6 @@ class CurvedChartPainter extends CustomPainter {
     // Set up the paint for the chart fill
     var fillPaint = Paint();
     fillPaint.style = PaintingStyle.fill;
-
-    // Set up the paint for the axes
-    var axisPaint = Paint()
-      ..color = Colors.grey
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.0;
-
-    // Draw X axis
-    canvas.drawLine(
-        Offset(0, size.height), Offset(size.width, size.height), axisPaint);
-
-    // Draw Y axis
-    canvas.drawLine(const Offset(0, 0), Offset(0, size.height), axisPaint);
 
     // Create paths for the chart line and fill
     var path = Path();
@@ -79,33 +65,11 @@ class CurvedChartPainter extends CustomPainter {
             ((size.height - strokeWidth) *
                 (xValues[i - 1].values.elementAt(0) / maxValue));
 
-        // Draw a quadratic bezier curve between each point
-        path.quadraticBezierTo(
-          x - (itemXDistance / 2) - (itemXDistance / 8),
-          previousValueHeight,
-          x - (itemXDistance / 2),
-          valueHeight + ((previousValueHeight - valueHeight) / 2),
-        );
-        path.quadraticBezierTo(
-          x - (itemXDistance / 2) + (itemXDistance / 8),
-          valueHeight,
-          x,
-          valueHeight,
-        );
+        // Directly connect the points with straight lines (no curves)
+        path.lineTo(x, valueHeight);
 
-        // Draw the fill path using the same quadratic bezier curves
-        fillPath.quadraticBezierTo(
-          x - (itemXDistance / 2) - (itemXDistance / 8),
-          previousValueHeight,
-          x - (itemXDistance / 2),
-          valueHeight + ((previousValueHeight - valueHeight) / 2),
-        );
-        fillPath.quadraticBezierTo(
-          x - (itemXDistance / 2) + (itemXDistance / 8),
-          valueHeight,
-          x,
-          valueHeight,
-        );
+        // Draw the fill path using straight lines
+        fillPath.lineTo(x, valueHeight);
       }
 
       // Close the fill path
@@ -128,35 +92,6 @@ class CurvedChartPainter extends CustomPainter {
 
     // Draw the chart line
     canvas.drawPath(path, paint);
-
-    // Draw X axis labels
-    for (int i = 0; i < xValues.length; i++) {
-      double x = size.width * i / (xValues.length - 1);
-      var textPainter = TextPainter(
-        text:
-            TextSpan(text: xValues[i].keys.elementAt(0), style: labelTextStyle),
-        textDirection: TextDirection.ltr,
-      );
-      textPainter.layout();
-      textPainter.paint(
-          canvas, Offset(x - textPainter.width / 2, size.height + 2));
-    }
-
-    // Draw Y axis labels
-    for (int i = 0; i < yValues.length; i++) {
-      double y = size.height * i / (yValues.length - 1);
-      double labelValue = yValues.last.values.elementAt(0) *
-          (yValues.length - i - 1) /
-          (yValues.length - 1);
-      var textPainter = TextPainter(
-        text: TextSpan(
-            text: labelValue.toStringAsFixed(0), style: labelTextStyle),
-        textDirection: TextDirection.ltr,
-      );
-      textPainter.layout();
-      textPainter.paint(
-          canvas, Offset(-textPainter.width - 2, y - textPainter.height / 2));
-    }
   }
 
   @override

@@ -6,4 +6,5 @@ abstract class Constants {
 
 abstract class ValueKeys {
   static const String tokenKey = "token";
+  static const String razorpayKey = "razorpayKey";
 }
