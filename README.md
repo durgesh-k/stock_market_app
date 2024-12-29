@@ -53,8 +53,9 @@ To test the voice calling functionality, follow the steps below:
 
 ## Initiate the Call:
 
-Bob initiates the call by selecting the audio calling feature and making the payment.
-Alice should also make the payment and be on the same screen bob is, i.e audio call screen.
+1. Bob initiates the call by selecting the audio calling feature and making the payment.
+2. Alice should also make the payment and be on the same screen bob is, i.e audio call screen.
+3. Please make sure both the users are at the Audio Call Screen, at the samne time to connect to each other.
 
 
 # Payment Testing
