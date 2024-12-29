@@ -1,5 +1,5 @@
-Stock Market App - README
-Welcome to the Stock Market App built with Flutter! This app is designed to provide real-time stock updates and supports a voice calling feature for communication between users. This README will guide you through setting up, testing, and using the app, including details about the app's API integrations and usage instructions.
+# Stock Market App - README
+Welcome to the Stock Market App built with Flutter! This app is designed to provide real-time stock updates and supports a voice-calling feature for communication between users. This README will guide you through setting up, testing, and using the app, including details about the app's API integrations and usage instructions.
 
 # Table of Contents
 1. App Setup
@@ -43,7 +43,7 @@ This will start the app in the Dev flavor and allow you to test the app in a dev
 
 
 # Voice Calling Feature
-To test the voice calling functionality, follow the steps below:
+To test the voice-calling functionality, follow the steps below:
 
 ## Login as Two Different Users:
 
@@ -54,8 +54,8 @@ To test the voice calling functionality, follow the steps below:
 ## Initiate the Call:
 
 1. Bob initiates the call by selecting the audio calling feature and making the payment.
-2. Alice should also make the payment and be on the same screen bob is, i.e audio call screen.
-3. Please make sure both the users are at the Audio Call Screen, at the samne time to connect to each other.
+2. Alice should also make the payment and be on the same screen Bob is i.e. audio call screen.
+3. Please make sure both users are at the Audio Call Screen, at the same time to connect.
 
 
 # Payment Testing
@@ -100,7 +100,7 @@ The app uses two external stock APIs to retrieve stock data:
 
 # Upstox API
 
-Upstox account verification is in progress during the app development, which takes approximately 4 days. Therefore, the Upstox API and WebSocket functionality cannot be used at the moment.
+Upstox account verification is in progress during the app development, which takes approximately 4 days. Therefore, the Upstox API and WebSocket functionality cannot be used now.
 
 Once the Upstox account is verified, we will shift to using Upstox WebSocket for real-time stock data updates.
 
