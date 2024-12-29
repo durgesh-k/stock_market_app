@@ -33,7 +33,9 @@ The app has three flavors configured: QA, Dev, and Prod. You can run the app in 
 ## 2. Recommended Flavor for Testing (Dev)
 To run the app in the Dev flavor (recommended for testing), use the following command:
 
+```
 flutter run --flavor dev lib/main.dart
+```
 
 This will start the app in the Dev flavor and allow you to test the app in a development environment.
 
