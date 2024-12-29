@@ -14,15 +14,17 @@ Future Improvements
 
 ## 1. Clone the Repository
 Start by cloning the repository to your local machine:
-
+```
 git clone https://github.com/your-repo/stock-market-app.git
 cd stock-market-app
+```
 
 ## 2. Install Dependencies
 Make sure that you have Flutter installed on your system. Then, install the required dependencies:
 
+```
 flutter pub get
-
+```
 
 # Running the App
 ## 1. Flavors Setup
